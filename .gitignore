@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Django
+*.sqlite3
+media/
+staticfiles/
+*.log
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# IDEs
+.vscode/
+*.swp
+
+# mac
+.DS_Store
+
+# Node
+node_modules/
+
+# others
+*.pem
+
+# Submodule intentially added incorrectly
+# You can untrack nested repo directories

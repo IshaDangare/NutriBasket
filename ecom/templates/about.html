@@ -1,0 +1,183 @@
+{% load static %}
+{% include "header.html" %}
+
+<section id="about" class="about-section">
+
+  <!-- Hero Header -->
+  <div class="about-hero text-center text-white d-flex align-items-center">
+    <div class="container">
+      <h1 class="fw-bold">About NutriBasket</h1>
+      <p class="lead">Smart Shopping for a Healthier You</p>
+    </div>
+  </div>
+
+  <div class="container py-5">
+
+    <!-- Intro Card -->
+    <div class="card shadow-lg border-0 p-5 about-card mb-5" data-aos="fade-up">
+      <h3 class="fw-bold text-success mb-3">
+        Welcome to NutriBasket 🌿
+      </h3>
+      <p class="text-muted">
+        NutriBasket is a nutrition-focused e-commerce platform designed to help users
+        make healthier and smarter food choices.
+      </p>
+
+      <ul class="about-list">
+        <li> View detailed nutrition information (Calories, Protein, Carbs & Fats)</li>
+        <li> Make informed and healthier purchasing decisions</li>
+        <li> Enjoy seamless and convenient online shopping</li>
+      </ul>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="feature-card">
+          <h5>Nutrition Transparency</h5>
+          <p>Every product displays complete nutritional values for better health tracking.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="feature-card">
+          <h5>Smart Cart</h5>
+          <p>Automatic nutrition calculation based on selected quantity.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="feature-card">
+          <h5>Secure Checkout</h5>
+          <p>Safe, encrypted, and reliable ordering experience.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="feature-card">
+          <h5>User Friendly</h5>
+          <p>Clean, responsive and simple interface for smooth shopping.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% include "footer.html" %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  /* ABOUT HERO */
+.about-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("https://images.unsplash.com/photo-1498837167922-ddd27525d352");
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+.about-hero h1 {
+    font-size: 42px;
+}
+
+.about-hero p {
+    font-size: 18px;
+}
+
+/* About Card */
+.about-card {
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* About List */
+.about-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-list li {
+    padding: 8px 0;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    transition: 0.4s ease;
+    height: 100%;
+}
+
+.feature-card h5 {
+    font-weight: 700;
+    color: #198754;
+    margin-bottom: 10px;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+</style>

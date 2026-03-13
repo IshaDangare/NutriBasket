@@ -1,0 +1,37 @@
+{% load static %}
+{% include "header.html" %}
+<title>Shopkart|Signin Page</title>
+
+<div class="container-fluid d-flex p-5 mt-5">
+        <div class="col-lg-6 mx-auto shadow  ">
+            <form action="" method="post" class="p-5 ">
+                {% csrf_token %}
+                {% if error  %}
+                <div class="mt-3 alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{error}}</strong>
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+                </div>
+                {% endif %}
+                <div>
+                    <lebel for="uname">Username : </label>
+                    <input class="form-control" type="email" name="uname" placeholder="name@gmail.com">
+                </div>
+                <div>
+                    <lebel for="pass1">Password : </label>
+                    <input class="form-control" type="password" name="pass1" placeholder="enter password">
+                </div>
+                
+                <div>
+                <input type="submit" value="Login" class="btn btn-primary btn-sm">
+                </div>
+                New user? <a href="{% url 'register' %}">Register</a> | 
+                <a href="{% url 'password_reset_request' %}">Forgot Password?</a>
+            </form>
+            </div>
+    <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+        <img src="{% static '/assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+</div>
+</div>
+
+
+{% include "footer.html" %}

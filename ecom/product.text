@@ -1,0 +1,118 @@
+# dairy
+Milk,42:3:5:1
+Cheese,402:25:1:33
+Yogurt,59:10:3:0
+
+# meats
+Chicken,239:27:0:14
+Beef,250:26:0:15
+Fish,206:22:0:12
+
+# fruits & vegetables
+Apple,52:0:14:0
+Orange,47:1:12:0
+Carrot,41:1:10:0
+Spinach,23:3:4:0
+
+# additional daily items (100+ entries)
+Bread,265:9:49:3
+Rice,130:2:28:0
+Egg,155:13:1:11
+Banana,89:1:23:0
+Potato,77:2:17:0
+Tomato,18:1:4:0
+Cucumber,16:0:3:0
+Onion,40:1:9:0
+Garlic,149:6:33:0
+Cheese slice,113:7:0:9
+Butter,717:0:0:81
+Yogurt plain,59:10:3:0
+Milk skim,34:3:5:0
+Milk whole,61:3:5:3
+Almonds,579:21:22:50
+Cashews,553:18:30:44
+Peanut butter,588:25:20:50
+Oats,389:17:66:7
+Pasta,131:5:25:1
+Chicken breast,165:31:0:4
+Chicken thigh,209:26:0:10
+Chicken wing,203:30:0:8
+Beef steak,271:25:0:19
+Pork chops,231:25:0:14
+Salmon,208:20:0:13
+Tuna,132:28:0:1
+Shrimp,99:24:0:0
+Lentils,116:9:20:0
+Chickpeas,164:9:27:2
+Beans mixed,127:9:23:0
+Broccoli,34:3:7:0
+Cauliflower,25:2:5:0
+Bell pepper,31:1:6:0
+Zucchini,17:1:3:0
+Eggplant,25:1:6:0
+Mushroom,22:3:3:0
+Cabbage,25:1:6:0
+Avocado,160:2:9:15
+Strawberry,33:1:8:0
+Blueberries,57:0:14:0
+Grapes,69:1:18:0
+Watermelon,30:1:8:0
+Pineapple,50:0:13:0
+Mango,60:1:15:0
+Pear,57:0:15:0
+Peach,39:1:10:0
+Cherry,50:1:12:0
+Kiwi,61:1:15:0
+Lemon,29:1:9:0
+Lime,30:0:11:0
+Coconut,354:3:15:33
+Pumpkin,26:1:7:0
+Sweet potato,86:2:20:0
+Corn,86:3:19:1
+Quinoa,120:4:21:2
+Barley,354:12:73:2
+Wheat flour,364:10:76:1
+Maize flour,365:9:76:1
+Sorghum,329:11:72:3
+Millet,378:11:73:4
+Buckwheat,343:13:71:3
+Chia seeds,486:17:42:31
+Flaxseed,534:18:29:42
+Sesame seeds,573:18:23:50
+Sunflower seeds,584:21:20:51
+Pistachios,562:20:28:45
+Walnuts,654:15:14:65
+Hazelnuts,628:15:17:61
+Pecans,691:9:14:72
+Plastic bottle water,0:0:0:0
+Coffee,1:0:0:0
+Tea,1:0:0:0
+Orange juice,45:0:10:0
+Apple juice,46:0:11:0
+Soda,41:0:11:0
+Beer,43:1:4:0
+Wine,85:0:0:0
+Chocolate bar,546:7:61:31
+Ice cream,207:3:24:11
+Sugar,387:0:100:0
+Salt,0:0:0:0
+Honey,304:0:82:0
+Maple syrup,260:0:67:0
+Jam,250:0:65:0
+Peas,81:5:14:0
+Green beans,31:2:7:0
+Peppers green,20:1:4:0
+Soy milk,54:6:3:2
+Almond milk,17:0:1:1
+Cereal flakes,357:8:80:2
+Granola,471:10:64:20
+Yogurt flavored,97:3:17:2
+Kale,49:4:9:1
+Swiss chard,19:1:4:0
+Collard greens,32:3:7:0
+Fennel,31:1:7:0
+Beetroot,43:2:10:0
+Radish,16:1:4:0
+Celery,16:1:3:0
+Peanut,567:25:16:49
+

@@ -1,0 +1,88 @@
+{% load static %}
+{% include "header.html" %}
+
+<section class="py-5 bg-light mt-5">
+
+  <!-- Top Category Navigation -->
+  <div class="container mb-4">
+    <div class="category-bar shadow-sm rounded p-3 bg-white text-center">
+      <a href="{% url 'product' %}" class="category-link">All</a>
+      <a href="{% url 'dairyproductlistview' %}" class="category-link">Dairy Products</a>
+      <a href="{% url 'meatproductlistview' %}" class="category-link">Meat Products</a>
+      <a href="{% url 'organicfoodlistview' %}" class="category-link">Organic Foods</a>
+      <a href="{% url 'fruitslistview' %}" class="category-link">Fruits</a>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <div class="sidebar shadow rounded p-4 bg-white">
+
+          <h5 class="mb-3 text-success">Filter by Price</h5>
+
+          <!-- YOUR FILTER LOGIC KEPT SAME -->
+          <form method="post" action="rangeview">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label"><strong>Min Price</strong></label>
+              <input type="number" class="form-control" name="min" placeholder="Min value" value="0">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label"><strong>Max Price</strong></label>
+              <input type="number" class="form-control" name="max" placeholder="Max value" value="0">
+            </div>
+
+            <input type="submit" value="Search" class="btn btn-success w-100">
+          </form>
+
+          <hr>
+
+          <h5 class="text-success">Sort</h5>
+          <button class="btn btn-outline-success btn-sm w-100 mb-2">High to Low</button>
+          <button class="btn btn-outline-success btn-sm w-100">Low to High</button>
+
+        </div>
+      </div>
+
+      <!-- Product Section -->
+      <div class="col-md-9">
+        <div class="row">
+
+          {% for item in allproduct %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card product-card h-100 shadow-sm">
+
+              <!-- SAME IMAGE SIZE -->
+              <div class="product-image-wrapper">
+                <img src="{{item.image.url}}"
+                     class="card-img-top product-img"
+                     alt="{{item.product_name}}">
+              </div>
+
+              <div class="card-body text-center">
+                <h5 class="card-title">{{item.product_name}}</h5>
+                <p class="price">₹{{item.price}}</p>
+
+                <a href="{% url 'product_detail' item.pk %}"
+                   class="btn btn-success btn-sm px-4">
+                   View Details
+                </a>
+              </div>
+
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+{% include "footer.html" %}

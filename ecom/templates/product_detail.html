@@ -1,0 +1,179 @@
+{% load static %}
+{% include "header.html" %}
+
+<section class="product-page py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- LEFT SIDE - IMAGE -->
+      <div class="col-lg-6 text-center">
+        <div class="image-container">
+          <img src="{{ product.image.url }}" 
+               alt="{{ product.product_name }}"
+               class="product-img">
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE - DETAILS -->
+      <div class="col-lg-6">
+
+        <span class="category-badge">
+          {{ product.product_category }}
+        </span>
+
+        <h2 class="product-title mt-3">
+          {{ product.product_name }}
+        </h2>
+
+        <h4 class="product-price mt-3">
+          ${{ product.price }}
+        </h4>
+
+        <p class="tax-text">
+          Additional tax may apply at checkout
+        </p>
+
+        <!-- Add To Cart -->
+        <div class="mt-4">
+          <a href="/addtocart/{{product.product_id}}" 
+             class="add-btn">
+             Add to Cart
+          </a>
+        </div>
+
+        <!-- Description -->
+        <div class="mt-4">
+          <h5>Product Details</h5>
+          <p class="description">
+            {{ product.desc }}
+          </p>
+        </div>
+
+        <!-- Delivery Info -->
+        <div class="delivery-info mt-4">
+          🚚 Delivery within 3 days
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% include "footer.html" %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>/* Page Background */
+.product-page {
+    background: #ffffff;
+}
+
+/* Image Container */
+.image-container {
+    background: #f5f7fa;
+    padding: 40px;
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
+
+/* Bigger Image */
+.product-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+/* Image Zoom Effect */
+.image-container:hover .product-img {
+    transform: scale(1.08);
+}
+
+/* Category Badge */
+.category-badge {
+    background: #e6f4ea;
+    color: #198754;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Product Title */
+.product-title {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+/* Price */
+.product-price {
+    color: #198754;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* Tax Text */
+.tax-text {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Add Button */
+.add-btn {
+    display: inline-block;
+    background: #198754;
+    color: #fff;
+    padding: 12px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #146c43;
+    transform: translateY(-2px);
+}
+
+/* Description */
+.description {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Delivery Info */
+.delivery-info {
+    background: #f1f3f5;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+}</style>

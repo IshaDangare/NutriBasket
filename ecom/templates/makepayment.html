@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make Payment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-container {
+            max-width: 450px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .payment-container h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .qr-image {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 12px;
+        }
+
+        .payment-form input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .payment-form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background: #198754;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .payment-form button:hover {
+            background: #146c43;
+        }
+
+        .note {
+            font-size: 14px;
+            color: #198754;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 500px) {
+            .payment-container {
+                margin: 40px 20px;
+                padding: 20px;
+            }
+
+            .qr-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="payment-container">
+    <h2>Complete Your Payment</h2>
+
+    <p>Scan the QR Code below to pay</p>
+
+    <!-- Replace with your Razorpay QR image -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Code" class="qr-image">
+
+    <form class="payment-form" method="post" action="/payment_complete/">
+        {% csrf_token %}
+        <input name="name" type="text" placeholder="Enter Your Full Name" required>
+        <input name="email" type="email" placeholder="Enter Your Email Address" required>
+        <button type="submit">I Have Completed Payment</button>
+    </form>
+
+    <div class="note">
+        After successful payment, you will receive a confirmation email.<br>
+        Your product will be delivered soon.
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% include "header.html" %}
+
+<section class="cart-section py-5" style="margin-top: 60px;">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- LEFT SIDE - CART ITEMS -->
+      <div class="col-lg-8">
+
+        {% for item in cart_items %}
+        <div class="card mb-4 shadow-sm border-0 rounded-4">
+          <div class="row g-0 align-items-center p-3">
+
+            <!-- Product Image -->
+            <div class="col-md-3 text-center">
+              <img src="{{item.product_id.image.url}}" alt="{{item.product_id.product_name}}" class="img-fluid rounded" style="max-height:100px;">
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-6">
+              <h5 class="fw-semibold">{{item.product_id.product_name}}</h5>
+              <p class="text-success fw-bold">Rs. {{item.product_id.price}}</p>
+              <p class="mb-0">Quantity: <strong>{{item.qty}}</strong></p>
+            </div>
+
+            <!-- Actions -->
+            <div class="col-md-3 text-center">
+              <a href="/remove_from_order/{{item.product_id.product_id}}" class="btn btn-outline-danger btn-sm mt-2">Remove</a>
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- RIGHT SIDE - SUMMARY -->
+      <div class="col-lg-4">
+        <div class="card shadow-sm rounded-4 p-3 sticky-top" style="top: 100px;">
+          <h5 class="fw-bold bg-primary text-white p-2 rounded-3 mb-3">Order Summary</h5>
+          <ul class="list-unstyled mb-3">
+            <li class="d-flex justify-content-between mb-2">
+              <span>Total Items</span>
+              <span>{{items}}</span>
+            </li>
+            <li class="d-flex justify-content-between mb-2">
+              <span>Total Amount</span>
+              <span>Rs. {{total}}</span>
+            </li>
+          </ul>
+          <hr>
+          <h6 class="d-flex justify-content-between fw-bold">
+            <span>Total</span>
+            <span>Rs. {{total}}</span>
+          </h6>
+          <a href="{% url 'makepayment' %}" class="btn btn-warning w-100 mt-3">Make Payment</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% include "footer.html" %}
+
+<style>
+/* Cart Section */
+.cart-section {
+    background-color: #f8f9fa;
+}
+
+/* Card Styles */
+.card {
+    transition: 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Product Name */
+.card h5 {
+    font-size: 1.1rem;
+}
+
+/* Remove Button */
+.btn-outline-danger {
+    font-size: 0.9rem;
+}
+
+/* Sticky Summary */
+.sticky-top {
+    top: 100px;
+}
+</style>

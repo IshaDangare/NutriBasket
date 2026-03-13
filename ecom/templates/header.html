@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  
+
+  <!-- Favicons -->
+  <link href="{% static "assets/img/favicon-32x32.png" %}" rel="icon">
+  <link href="{% static "assets/img/apple-touch-icon.png" %}"rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,
+  400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,
+  700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static "assets/vendor/aos/aos.css" %} "rel="stylesheet">
+  <link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %} "rel="stylesheet">
+  <link href="{% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %} "rel="stylesheet">
+  <link href="{% static "assets/vendor/boxicons/css/boxicons.min.css" %} "rel="stylesheet">
+  <link href="{% static "assets/vendor/glightbox/css/glightbox.min.css" %} "rel="stylesheet">
+  <link href="{% static "assets/vendor/remixicon/remixicon.css" %} "rel="stylesheet">
+  <link href="{% static "assets/vendor/swiper/swiper-bundle.min.css" %} "rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static "assets/css/style.css" %} "rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: LuxyMarble
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/LuxyMarble-free-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+  <h1 class="m-0">
+    <a href="{% url 'index' %}" class="brand-logo">
+      Nutri<span>Basket</span>
+    </a>
+  </h1>
+</div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="{% if request.path == 'index' %}nav-link scrollto active{% endif %}"><a href="{% url 'index' %}">Home</a></li> 
+          <li class="{% if request.path == 'product' %}nav-link scrollto active{% endif %}"><a href="{% url 'product' %}">Products</a></li>
+          <li class="{% if request.path == 'about' %}nav-link scrollto active{% endif %}"><a href="{% url 'aboutus' %}">About</a></li>
+          <li class="{% if request.path == 'showorders' %}nav-link scrollto active{% endif %}"><a href="{% url 'showorders' %}">Orders</a></li> 
+          <li class="{% if request.path == 'cart' %}nav-link scrollto active{% endif %}"><a href="{% url 'cart' %}">Cart</a></li> 
+          <!-- <li class="{% if request.path == 'service' %}nav-link scrollto active{% endif %}"><a href="{% url 'services' %}">Services</a></li>  -->
+          <li class="{% if request.path == 'contact' %}nav-link scrollto active{% endif %}"><a href="{% url 'contactus' %}">Contact</a></li>  
+         
+          
+          <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i></a>
+          {% if user.is_authenticated %}
+          <!-- <button type="submit" class="btn btn-success px-4">Logout</button> -->
+          <li ><a class="btn btn-success px-4" href="{% url 'signout' %}">Logout</a></li>
+          {% else %}
+
+          <li><a class="btn btn-success px-4" href="{% url "signin" %}">Get Started</a></li>
+          <li><a class="btn btn-success px-4"href="{% url 'register' %}">Register</a></li>
+          {% endif %}          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header> 
+  <!-- <div class="fixed-top d-flex align-items-center">
+     {% if user.is_authenticated %}
+                     <i> <small>Welcome {{user.username}}</small></i>&nbsp;
+          {% else %}
+          <strong>Welcome guest !!!</strong>
+          {% endif %}
+
+  </div> -->
+    <!-- Vendor JS Files -->
+  <script src="{% static "assets/vendor/purecounter/purecounter_vanilla.js" %}"></script>
+  <script src="{% static "assets/vendor/aos/aos.js" %}"></script>
+  <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "assets/vendor/glightbox/js/glightbox.min.js" %}"></script>
+  <script src="{% static "assets/vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "assets/vendor/swiper/swiper-bundle.min.js" %}"></script>
+  <script src="{% static "assets/vendor/php-email-form/validate.js" %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "assets/js/main.js" %}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+
+/* ===== GREEN NUTRITION THEME ===== */
+/* Logo Styling */
+.brand-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: #ffffff !important;   /* Force white */
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Highlight Basket differently */
+.brand-logo span {
+    color: #d1ffe8;
+    font-weight: 600;
+}
+
+/* Hover */
+.brand-logo:hover {
+    color: #ffffff;
+}
+/* Header background */
+#header {
+    background: linear-gradient(90deg, #0f5132, #198754, #20c997);
+    /* padding: 18px 0; */
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.logo h1 a {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.logo h1 a:hover {
+    color: #d1ffe8;
+}
+
+/* Navbar links */
+#navbar ul li a {
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    color: #d1ffe8;
+}
+
+/* Active link */
+#navbar ul li .active {
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Cart icon */
+#navbar i {
+    color: #ffffff;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+#navbar i:hover {
+    color: #d1ffe8;
+    transform: scale(1.1);
+}
+
+/* Buttons */
+.getstarted {
+    background: #ffffff;
+    color: #198754 !important;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.getstarted:hover {
+    background: #d1ffe8;
+    color: #0f5132 !important;
+}
+
+.mobile-nav-toggle {
+    color: #ffffff;
+    font-size: 28px;
+}
+#header.scrolled {
+    background: #0f5132;
+}
+
+</style>
