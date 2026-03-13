@@ -38,5 +38,13 @@ node_modules/
 # others
 *.pem
 
-# Submodule intentially added incorrectly
+# Submodule intentionally added incorrectly
 # You can untrack nested repo directories
+# If a nested Django project folder gets tracked accidentally, ignore nested git metadata
+ecom/.git
+ecom/.gitmodules
+
+# Local project paths (update if your username changes)
+# (This is optional; keep only if you need path-specific ignore)
+# c:\Users\Isha\Downloads\nutribasket_project\ecom/**
+
